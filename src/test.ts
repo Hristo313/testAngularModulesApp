@@ -2,15 +2,28 @@
 
 import 'zone.js/testing';
 import { getTestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';
+
+(window as any).$ = {
+  ig: {
+    RevealSdkSettings: {
+      setBaseUrl: () => {},
+      theme: {}
+    },
+    RevealTheme: function () {
+      return {};
+    },
+    RVDashboard: {
+      loadDashboard: () => {},
+    },
+    RevealView: function () {}
+  }
+};
 
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting(), {
+  BrowserTestingModule,
+  platformBrowserTesting(), {
     teardown: { destroyAfterEach: false }
   }
 );

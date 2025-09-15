@@ -24,13 +24,13 @@ export class ReportsComponent {
   };
 
   constructor() {
-    $.ig.RevealSdkSettings.setBaseUrl('https://samples.revealbi.io/upmedia-backend/reveal-api/');
+    (window as any).$.ig.RevealSdkSettings.setBaseUrl('https://samples.revealbi.io/upmedia-backend/reveal-api/');
     this.setRevealTheme();
   }
 
   private setRevealTheme() {
     const style = window.getComputedStyle(document.body);
-    const theme = new $.ig.RevealTheme();
+    const theme = new (window as any).$.ig.RevealTheme();
     theme.regularFont = style.getPropertyValue('--ig-font-family')?.trim() || 'sans-serif';
     theme.mediumFont = theme.regularFont;
     theme.boldFont = theme.regularFont;
@@ -44,6 +44,6 @@ export class ReportsComponent {
     theme.dashboardBackgroundColor = style.getPropertyValue('--ig-gray-100').trim();
     theme.visualizationBackgroundColor = style.getPropertyValue('--ig-surface-500').trim();
 
-    $.ig.RevealSdkSettings.theme = theme;
+    (window as any).$.ig.RevealSdkSettings.theme = theme;
   }
 }
