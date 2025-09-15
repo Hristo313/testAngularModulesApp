@@ -1,0 +1,81 @@
+<igx-navbar class="navbar">
+  <igx-navbar-action>
+    <button igxIconButton="flat" igxRipple [igxToggleAction]="navDrawer" class="icon-button">
+      <igx-icon class="icon">
+        menu
+      </igx-icon>
+    </button>
+  </igx-navbar-action>
+  <igx-navbar-title class="navbar-content">
+    <h6 class="content">
+      MyCRM
+    </h6>
+    <p class="ig-typography__body-2 content"></p>
+  </igx-navbar-title>
+  <button igxIconButton="flat" igxRipple class="icon-button_1">
+    <igx-icon class="icon_1">
+      search
+    </igx-icon>
+  </button>
+  <button igxIconButton="flat" igxRipple class="icon-button_1">
+    <igx-icon class="icon_1">
+      settings
+    </igx-icon>
+  </button>
+  <button igxIconButton="flat" igxRipple class="icon-button_1">
+    <igx-icon class="icon_1">
+      notifications_none
+    </igx-icon>
+  </button>
+</igx-navbar>
+<div class="row-layout group">
+  <igx-nav-drawer [isOpen]="true" [pin]="true" width="240px" #navDrawer class="nav-drawer">
+    <ng-template igxDrawer>
+      <div igxDrawerItem igxRipple [routerLink]="['/home']">
+        <igx-icon class="icon_2">
+          dashboard
+        </igx-icon>
+        <span>Dashboard</span>
+      </div>
+      <div igxDrawerItem igxRipple [routerLink]="['/customers']">
+        <igx-icon class="icon_2">
+          people_outline
+        </igx-icon>
+        <span>Customers</span>
+      </div>
+      <div igxDrawerItem igxRipple [routerLink]="['/deals']">
+        <igx-icon class="icon_2">
+          work_outline
+        </igx-icon>
+        <span>Deals</span>
+      </div>
+      <div igxDrawerItem igxRipple [routerLink]="['/reports']">
+        <igx-icon class="icon_2">
+          bar_chart
+        </igx-icon>
+        <span>Reports</span>
+      </div>
+      <div igxDrawerItem igxRipple [routerLink]="['/support']">
+        <igx-icon class="icon_2">
+          help_outline
+        </igx-icon>
+        <span>Support</span>
+      </div>
+      <div igxDrawerItem igxRipple [routerLink]="['/calendar']">
+        <igx-icon class="icon_2">
+          calendar_month
+        </igx-icon>
+        <span>Calendar</span>
+      </div>
+      <div igxDrawerItem igxRipple [routerLink]="['/tasks']">
+        <igx-icon class="icon_2">
+          task_alt
+        </igx-icon>
+        <span>Tasks</span>
+      </div>
+    </ng-template>
+  </igx-nav-drawer>
+  <div class="view-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
